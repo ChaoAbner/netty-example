@@ -1,2 +1,4 @@
 # netty-test-master
-netty测试demo
+
+**netty 服务端客户端通信案例代码**
+
