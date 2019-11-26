@@ -1,4 +1,4 @@
-package handler;
+package demo.handler;
 
 import io.netty.buffer.Unpooled;
 import io.netty.channel.ChannelFutureListener;
@@ -15,7 +15,7 @@ public class ServerHandler extends ChannelInboundHandlerAdapter {
     @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
         // 从管道读取数据
-        System.out.println("server received data: " + msg);
+        System.out.println("demo.server received data: " + msg);
         ctx.write(msg);
     }
 

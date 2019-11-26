@@ -1,6 +1,6 @@
-package client;
+package demo.client;
 
-import handler.ClientHandler;
+import demo.handler.ClientHandler;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelInitializer;
@@ -41,7 +41,7 @@ public class NettyClient implements Runnable{
                     pipeline.addLast("decoder", new StringDecoder(CharsetUtil.UTF_8));
                     pipeline.addLast("encoder", new StringEncoder(CharsetUtil.UTF_8));
 
-                    pipeline.addLast("handler", new ClientHandler());
+                    pipeline.addLast("demo/handler", new ClientHandler());
 
                 }
             });
