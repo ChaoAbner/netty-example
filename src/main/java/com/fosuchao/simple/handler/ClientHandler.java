@@ -1,4 +1,4 @@
-package demo.handler;
+package com.fosuchao.simple.handler;
 
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
@@ -12,7 +12,7 @@ public class ClientHandler extends ChannelInboundHandlerAdapter {
 
     @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
-        System.out.println("client½ÓÊÜµ½·þÎñÆ÷·µ»ØµÄÐÅÏ¢" + msg);
+        System.out.println("clientï¿½ï¿½ï¿½Üµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Øµï¿½ï¿½ï¿½Ï¢" + msg);
     }
 
     @Override

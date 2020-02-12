@@ -1,4 +1,4 @@
-package demo.handler;
+package com.fosuchao.simple.handler;
 
 import io.netty.buffer.Unpooled;
 import io.netty.channel.ChannelFutureListener;
@@ -14,21 +14,21 @@ public class ServerHandler extends ChannelInboundHandlerAdapter {
 
     @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
-        // ´Ó¹ÜµÀ¶ÁÈ¡Êý¾Ý
-        System.out.println("demo.server received data: " + msg);
+        // ï¿½Ó¹Üµï¿½ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½
+        System.out.println("com.fosuchao.simple.server received data: " + msg);
         ctx.write(msg);
     }
 
     @Override
     public void channelReadComplete(ChannelHandlerContext ctx) throws Exception {
-        // ¶ÁÈ¡Êý¾ÝÍê³É
-        ctx.writeAndFlush(Unpooled.EMPTY_BUFFER)    // flushµ÷ËùÓÐÐ´»ØµÄÊý¾Ý
-                .addListener(ChannelFutureListener.CLOSE);  // µ±flashÍê³Éºó¹Ø±ÕChannel
+        // ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+        ctx.writeAndFlush(Unpooled.EMPTY_BUFFER)    // flushï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð´ï¿½Øµï¿½ï¿½ï¿½ï¿½ï¿½
+                .addListener(ChannelFutureListener.CLOSE);  // ï¿½ï¿½flashï¿½ï¿½Éºï¿½Ø±ï¿½Channel
     }
 
     @Override
     public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) throws Exception {
-        cause.printStackTrace();    // ²¶»ñÒì³£ÐÅÏ¢
-        ctx.close();            // ³öÏÖÒì³£Ôò¹Ø±Õchannel
+        cause.printStackTrace();    // ï¿½ï¿½ï¿½ï¿½ï¿½ì³£ï¿½ï¿½Ï¢
+        ctx.close();            // ï¿½ï¿½ï¿½ï¿½ï¿½ì³£ï¿½ï¿½Ø±ï¿½channel
     }
 }

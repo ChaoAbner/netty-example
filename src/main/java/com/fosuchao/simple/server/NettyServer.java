@@ -1,6 +1,6 @@
-package demo.server;
+package com.fosuchao.simple.server;
 
-import demo.handler.ServerHandler;
+import com.fosuchao.simple.handler.ServerHandler;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.*;
 import io.netty.channel.nio.NioEventLoopGroup;
@@ -19,32 +19,32 @@ import io.netty.util.CharsetUtil;
  * @Date: 2019/11/25 19:46
  */
 public class NettyServer {
-    //IPµØÖ·
+    //IPï¿½ï¿½Ö·
     private  static  String IP="127.0.0.1";
-    //Ä¬ÈÏ¶Ë¿Ú
+    //Ä¬ï¿½Ï¶Ë¿ï¿½
     private  static  int port = 5566;
-    // ×éµÄÊýÁ¿
+    // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     private static final int BIZGROUPSIZE = Runtime.getRuntime().availableProcessors() * 2;
-    // Í·²¿ÊýÁ¿
+    // Í·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     private static final int BIZHEADSIZE = 100;
-    // ´´½¨Áìµ¼×é
+    // ï¿½ï¿½ï¿½ï¿½ï¿½ìµ¼ï¿½ï¿½
     private static final EventLoopGroup bossGroup = new NioEventLoopGroup(BIZGROUPSIZE);
 
-    // ´´½¨¹¤×÷×é
+    // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     private static final EventLoopGroup workerGroup = new NioEventLoopGroup(BIZHEADSIZE);
 
     public static void init() throws InterruptedException {
         ServerBootstrap serverBootstrap = new ServerBootstrap();
 
-        // Ìí¼Ó×é
+        // ï¿½ï¿½ï¿½ï¿½ï¿½
         serverBootstrap.group(bossGroup, workerGroup);
 
-        // ÉùÃ÷Í¨µÀ
+        // ï¿½ï¿½ï¿½ï¿½Í¨ï¿½ï¿½
         serverBootstrap.channel(NioServerSocketChannel.class);
 
         serverBootstrap.childHandler(new ChannelInitializer<Channel>() {
             protected void initChannel(Channel channel) throws Exception {
-                // pipeline ¹ÜÀíchannelÖÐµÄhandler
+                // pipeline ï¿½ï¿½ï¿½ï¿½channelï¿½Ðµï¿½handler
                 ChannelPipeline pipeline = channel.pipeline();
 
                 pipeline.addLast(new LengthFieldBasedFrameDecoder(Integer.MAX_VALUE, 0, 4, 0, 4));
@@ -56,11 +56,11 @@ public class NettyServer {
             }
         });
 
-        System.out.println("·þÎñÆ÷ÐÅÏ¢£¬IPÎª:" + IP + "£¬¶Ë¿ÚÎª£º" + port);
-        // °ó¶¨server,Í¨¹ýµ÷ÓÃsync·½·¨Í¬²½·½·¨×èÈûÖªµÀ°ó¶¨³É¹¦
+        System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½IPÎª:" + IP + "ï¿½ï¿½ï¿½Ë¿ï¿½Îªï¿½ï¿½" + port);
+        // ï¿½ï¿½server,Í¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½syncï¿½ï¿½ï¿½ï¿½Í¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Öªï¿½ï¿½ï¿½ó¶¨³É¹ï¿½
         ChannelFuture sync = serverBootstrap.bind(IP, port).sync();
         sync.channel().closeFuture().sync();
-        System.out.println("·þÎñÆ÷Æô¶¯³É¹¦");
+        System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É¹ï¿½");
     }
     protected static void shutdown() {
         workerGroup.shutdownGracefully();
@@ -68,7 +68,7 @@ public class NettyServer {
     }
 
     public static void main(String[] args) throws Exception {
-        System.out.println("¿ªÊ¼Æô¶¯TCP·þÎñÆ÷...");
+        System.out.println("ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½TCPï¿½ï¿½ï¿½ï¿½ï¿½ï¿½...");
         NettyServer.init();
 //         HelloServer.shutdown();
 
