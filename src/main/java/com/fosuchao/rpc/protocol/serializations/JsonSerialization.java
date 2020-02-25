@@ -14,7 +14,7 @@ import java.io.IOException;
 public class JsonSerialization implements Serialization {
     ObjectMapper objectMapper;
 
-    JsonSerialization() {
+    public JsonSerialization() {
         this.objectMapper = new ObjectMapper();
     }
 
