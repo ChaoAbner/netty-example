@@ -1,6 +1,6 @@
-package com.fosuchao.heartbeat.initalizer;
+package com.fosuchao.heartbeatsimple.initalizer;
 
-import com.fosuchao.heartbeat.handler.HeartbeatServerHandler;
+import com.fosuchao.heartbeatsimple.handler.HeartbeatServerHandler;
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.ChannelPipeline;
 import io.netty.channel.socket.nio.NioSocketChannel;

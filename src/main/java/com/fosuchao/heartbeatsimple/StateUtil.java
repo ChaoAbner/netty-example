@@ -1,4 +1,4 @@
-package com.fosuchao.heartbeat;
+package com.fosuchao.heartbeatsimple;
 
 import io.netty.handler.timeout.IdleState;
 

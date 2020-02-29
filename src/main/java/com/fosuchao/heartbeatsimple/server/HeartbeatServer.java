@@ -1,6 +1,6 @@
-package com.fosuchao.heartbeat.server;
+package com.fosuchao.heartbeatsimple.server;
 
-import com.fosuchao.heartbeat.initalizer.HeartbeatInitalizer;
+import com.fosuchao.heartbeatsimple.initalizer.HeartbeatInitalizer;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelFutureListener;
