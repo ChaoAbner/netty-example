@@ -68,7 +68,6 @@ public class TcpClient {
         return this.retryPolicy;
     }
 
-
     public static void main(String[] args) {
         TcpClient client = new TcpClient("localhost", 8899);
         client.connect();

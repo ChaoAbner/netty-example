@@ -3,7 +3,7 @@ package com.fosuchao.heartbeatplus.client.reconnect;
 import java.util.Random;
 
 /**
- * @description:
+ * @description: 重连策略的默认实现
  * @author: Joker Ye
  * @create: 2020/2/29 12:10
  */

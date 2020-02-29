@@ -10,7 +10,7 @@ import io.netty.channel.EventLoop;
 import java.util.concurrent.TimeUnit;
 
 /**
- * @description:
+ * @description: 重连控制器
  * @author: Joker Ye
  * @create: 2020/2/29 12:14
  */
@@ -30,6 +30,7 @@ public class ReconnectHandler extends ChannelInboundHandlerAdapter {
     @Override
     public void channelActive(ChannelHandlerContext ctx) throws Exception {
         System.out.println("Successfully established a connection to the server.");
+        // 重连成功，重置重连次数
         retryCount = 0;
     }
 
